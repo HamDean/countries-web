@@ -1,17 +1,4 @@
-import { useEffect, useState } from "react"
-import c from "../data/data"
+import countries from "../data/data.json"
 
-interface Countries {
-    name: string
-}
-
-const useCountries = () => {
-    const [countries, setCountries] = useState<Countries[]>()
-    useEffect(() => {
-        setCountries(c)
-    },[])
-
-    return { countries }
-}
-
+const useCountries = () => ({countries})
 export default useCountries;
