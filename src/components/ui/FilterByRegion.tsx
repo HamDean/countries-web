@@ -1,27 +1,30 @@
+import regions from "@/utils/constants";
 import {
   Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
   SelectTrigger,
   SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@radix-ui/react-select";
-
-import regions from "@/utils/constants";
+} from "@/components/ui/select";
 
 const FilterByRegion = () => {
   return (
     <Select>
       <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Filter By Regions" />
+        <SelectValue placeholder="Filter By Region" />
       </SelectTrigger>
       <SelectContent>
-        {regions.map((region) => (
-          <SelectItem value={region} key={region} className="cursor-pointer">
-            {region}
-          </SelectItem>
-        ))}
+        <SelectGroup>
+          {regions.map((region) => (
+            <SelectItem key={region} value={region}>
+              {region}
+            </SelectItem>
+          ))}
+        </SelectGroup>
       </SelectContent>
     </Select>
   );
 };
+
 export default FilterByRegion;
