@@ -4,7 +4,7 @@ import { BentoGrid, BentoGridItem } from "./BentoGrid";
 const CardGrid = () => {
   const { countries } = useCountries();
   return (
-    <BentoGrid>
+    <BentoGrid className="max-w-[85vw]">
       {countries.map((country) => (
         <BentoGridItem
           header={country.flag}
@@ -13,6 +13,7 @@ const CardGrid = () => {
           population={country.population}
           region={country.region}
           key={country.alpha2Code}
+          className="cursor-pointer"
         />
       ))}
     </BentoGrid>
