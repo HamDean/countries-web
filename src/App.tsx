@@ -9,16 +9,18 @@ const App = () => {
   const [selectedCountries, setCountries] = useState<Country[]>(countries);
 
   const handleSelect = (value: string) => {
-    setCountries(
-      countries.filter((country) => country.region === value)
-    );
+    setCountries(countries.filter((country) => country.region === value));
   };
 
   return (
     <div>
-      <SearchCountryBar />
-      <FilterByRegion onSelectRegion={(value) => handleSelect(value)} />
-      <CardGrid countries={selectedCountries} />
+      <main className="max-w-[80vw] mx-auto">
+        <div className="flex flex-col md:flex-row justify-between mb-6">
+          <SearchCountryBar />
+          <FilterByRegion onSelectRegion={(value) => handleSelect(value)} />
+        </div>
+        <CardGrid countries={selectedCountries} />
+      </main>
     </div>
   );
 };
