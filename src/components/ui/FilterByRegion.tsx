@@ -8,9 +8,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const FilterByRegion = () => {
+interface Props {
+  onSelectRegion: (value: string) => void;
+}
+
+const FilterByRegion = ({ onSelectRegion }: Props) => {
   return (
-    <Select>
+    <Select onValueChange={(value) => onSelectRegion(value)}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Filter By Region" />
       </SelectTrigger>

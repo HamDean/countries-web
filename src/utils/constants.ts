@@ -2,7 +2,7 @@ const regions = [
   "Africa",
   "Asia",
   "Europe",
-  "America",
+  "Americas",
   "Oceania",
 ];
 

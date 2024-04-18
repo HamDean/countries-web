@@ -1,8 +1,8 @@
-import useCountries from "@/hooks/useCountries";
+import  { Country } from "@/hooks/useCountries";
 import { BentoGrid, BentoGridItem } from "./BentoGrid";
 
-const CardGrid = () => {
-  const { countries } = useCountries();
+
+const CardGrid = ({countries}: {countries: Country[]}) => {
   return (
     <BentoGrid className="max-w-[85vw]">
       {countries.map((country) => (
