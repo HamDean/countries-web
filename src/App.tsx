@@ -2,6 +2,7 @@ import { useState } from "react";
 import CardGrid from "./components/ui/CardGrid";
 import FilterByRegion from "./components/ui/FilterByRegion";
 import useCountries, { Country } from "./hooks/useCountries";
+import SearchCountryBar from "./components/ui/SearchCountryBar";
 
 const App = () => {
   const { countries } = useCountries();
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <div>
+      <SearchCountryBar />
       <FilterByRegion onSelectRegion={(value) => handleSelect(value)} />
       <CardGrid countries={selectedCountries} />
     </div>
