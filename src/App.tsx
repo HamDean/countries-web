@@ -12,11 +12,16 @@ const App = () => {
     setCountries(countries.filter((country) => country.region === value));
   };
 
+  const handleQueryCountry = (query: string) => {
+    setCountries(countries.filter((country) => country.name.includes(query)));
+    console.log(query)
+  };
+
   return (
     <div>
       <main className="max-w-[80vw] mx-auto">
         <div className="flex flex-col md:flex-row justify-between mb-6">
-          <SearchCountryBar />
+          <SearchCountryBar onQueryCountry={handleQueryCountry} />
           <FilterByRegion onSelectRegion={(value) => handleSelect(value)} />
         </div>
         <CardGrid countries={selectedCountries} />

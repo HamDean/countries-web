@@ -1,4 +1,18 @@
-const SearchCountryBar = () => {
+import { useRef } from "react";
+
+interface Props {
+  onQueryCountry: (query: string) => void;
+}
+
+const SearchCountryBar = ({ onQueryCountry }: Props) => {
+  const ref = useRef<HTMLInputElement>(null);
+
+  const handleQueryCountry = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    if (!ref.current) return;
+    onQueryCountry(ref.current.value);
+  };
+
   return (
     <form className="w-full  md:max-w-[50%] mb-4 md:0">
       <label
@@ -18,9 +32,9 @@ const SearchCountryBar = () => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
             />
           </svg>
@@ -31,6 +45,10 @@ const SearchCountryBar = () => {
           className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-10 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none"
           placeholder="Search for a country..."
           required
+          ref={ref}
+          onChange={(e) => {
+            handleQueryCountry(e);
+          }}
         />
         <button
           type="submit"
