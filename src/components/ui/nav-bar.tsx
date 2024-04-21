@@ -50,7 +50,7 @@ export const FloatingNav = ({ className }: { className?: string }) => {
           className
         )}
       >
-        <h1>Where in the world?</h1>
+        <h1 className="font-bold italic opacity-[0.8]">Where in the world?</h1>
         <ModeToggle />
       </motion.div>
     </AnimatePresence>

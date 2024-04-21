@@ -14,8 +14,8 @@ interface Props {
 
 const FilterByRegion = ({ onSelectRegion }: Props) => {
   return (
-    <Select onValueChange={(value) => onSelectRegion(value)}>
-      <SelectTrigger className="w-[180px]">
+    <Select  onValueChange={(value) => onSelectRegion(value)}>
+      <SelectTrigger  className="w-[180px] text-gray-500">
         <SelectValue placeholder="Filter By Region" />
       </SelectTrigger>
       <SelectContent>

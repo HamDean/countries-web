@@ -23,7 +23,7 @@ const App = () => {
       <nav>
         <FloatingNav />
       </nav>
-      <main className="max-w-[80vw] mx-auto">
+      <main className="max-w-[80vw] mx-auto mt-5">
         <div className="flex flex-col md:flex-row justify-between mb-6">
           <SearchCountryBar onQueryCountry={handleQueryCountry} />
           <FilterByRegion onSelectRegion={(value) => handleSelect(value)} />
