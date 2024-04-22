@@ -5,7 +5,6 @@ import useCountries, { Country } from "./hooks/useCountries";
 import SearchCountryBar from "./components/ui/SearchCountryBar";
 import { FloatingNav } from "./components/ui/nav-bar";
 import { ThemeProvider } from "@/components/theme-provider";
-import Tags from "./components/ui/Tags";
 
 const App = () => {
   const { countries } = useCountries();
@@ -22,7 +21,6 @@ const App = () => {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div>
-        <Tags borders={countries[2].borders}/>
         <nav>
           <FloatingNav />
         </nav>
