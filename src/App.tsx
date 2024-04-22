@@ -4,7 +4,8 @@ import FilterByRegion from "./components/ui/FilterByRegion";
 import useCountries, { Country } from "./hooks/useCountries";
 import SearchCountryBar from "./components/ui/SearchCountryBar";
 import { FloatingNav } from "./components/ui/nav-bar";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
+import Tags from "./components/ui/Tags";
 
 const App = () => {
   const { countries } = useCountries();
@@ -15,22 +16,24 @@ const App = () => {
   };
 
   const handleQueryCountry = (query: string) => {
-    setCountries(countries.filter((country) => country.name.includes(query))) };
+    setCountries(countries.filter((country) => country.name.includes(query)));
+  };
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-    <div>
-      <nav>
-        <FloatingNav />
-      </nav>
-      <main className="max-w-[80vw] mx-auto mt-5">
-        <div className="flex flex-col md:flex-row justify-between mb-6">
-          <SearchCountryBar onQueryCountry={handleQueryCountry} />
-          <FilterByRegion onSelectRegion={(value) => handleSelect(value)} />
-        </div>
-        <CardGrid countries={selectedCountries} />
-      </main>
-    </div>
+      <div>
+        <Tags borders={countries[0].borders}/>
+        <nav>
+          <FloatingNav />
+        </nav>
+        <main className="max-w-[80vw] mx-auto mt-5">
+          <div className="flex flex-col md:flex-row justify-between mb-6">
+            <SearchCountryBar onQueryCountry={handleQueryCountry} />
+            <FilterByRegion onSelectRegion={(value) => handleSelect(value)} />
+          </div>
+          <CardGrid countries={selectedCountries} />
+        </main>
+      </div>
     </ThemeProvider>
   );
 };

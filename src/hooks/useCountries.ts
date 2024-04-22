@@ -5,10 +5,11 @@ export interface Country{
     capital: string,
     population: number,
     region: string,
-    alpha2Code: string
+    alpha2Code: string,
+    borders: string[]
   }
 
-const countries = c as Country[];
+  const countries: Country[] = (c as unknown) as Country[];
 
 const useCountries = () => ({ countries });
 export default useCountries;
