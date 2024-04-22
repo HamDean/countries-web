@@ -6,6 +6,7 @@ export interface Country{
     population: number,
     region: string,
     alpha2Code: string,
+    alpha3Code: string,
     borders: string[]
   }
 

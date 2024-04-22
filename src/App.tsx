@@ -22,7 +22,7 @@ const App = () => {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div>
-        <Tags borders={countries[0].borders}/>
+        <Tags borders={countries[2].borders}/>
         <nav>
           <FloatingNav />
         </nav>
