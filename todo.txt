@@ -1,3 +1,4 @@
 [] - adjust the floating nav on mobile
 [] - fix the issue with the color mode switch
 [] - linke filtering and search results
+[] - do something about the search button
