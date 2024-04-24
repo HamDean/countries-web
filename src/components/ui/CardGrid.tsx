@@ -6,7 +6,7 @@ const CardGrid = ({ countries }: { countries: Country[] }) => {
   return (
     <BentoGrid>
       {countries.map((country) => (
-        <Link to={'/details/'} key={country.alpha2Code}>
+        <Link to={'/details/' + country.name} key={country.alpha2Code}>
         <BentoGridItem
           header={country.flag}
           title={country.name}

@@ -1,4 +1,3 @@
-import useStore from "@/store";
 import { cn } from "@/utils/cn";
 
 interface Props {
@@ -39,14 +38,12 @@ export const BentoGridItem = ({
   region,
   capital,
 }: Props) => {
-  const setCountry = useStore((s) => s.setCountry);
   return (
     <div
       className={cn(
         "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-transparent dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-10 w-[15.63rem]",
         className
       )}
-      onClick={() => setCountry(title!)}
     >
       <div className="group-hover/bento:translate-x-1 transition duration-200">
         <div className="rounded-sm overflow-hidden ">

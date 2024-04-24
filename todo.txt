@@ -2,3 +2,4 @@
 [] - fix the issue with the color mode switch
 [] - linke filtering and search results
 [] - do something about the search button
+[] - fix text wrapping on the border countries

@@ -7,7 +7,7 @@ interface CountryStore {
 
 
 const useStore = create<CountryStore>((set) => ({
-    country: '',  
+    country: 'Ghana',  
     setCountry: (selected) => set({ country: selected }) 
   }));
 
