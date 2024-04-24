@@ -1,6 +1,6 @@
 const CountryDetailsPage = () => {
   return (
-    <div className="bg-blue-800">CountryDetails</div>
+    <div>CountryDetails</div>
   )
 }
 export default CountryDetailsPage
