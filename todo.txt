@@ -3,3 +3,4 @@
 [] - linke filtering and search results
 [] - do something about the search button
 [] - fix text wrapping on the border countries
+[] - fix undefined map on some elements
