@@ -1,4 +1,16 @@
+import useStore from "@/store";
 import { cn } from "@/utils/cn";
+
+interface Props {
+  className?: string;
+  title?: string;
+  description?: string | React.ReactNode;
+  header?: string;
+  icon?: React.ReactNode;
+  population: number;
+  region: string;
+  capital: string | undefined;
+}
 
 export const BentoGrid = ({
   className,
@@ -26,22 +38,15 @@ export const BentoGridItem = ({
   population,
   region,
   capital,
-}: {
-  className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  header?: string;
-  icon?: React.ReactNode;
-  population: number;
-  region: string;
-  capital: string | undefined;
-}) => {
+}: Props) => {
+  const setCountry = useStore((s) => s.setCountry);
   return (
     <div
       className={cn(
         "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-transparent dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-10 w-[15.63rem]",
         className
       )}
+      onClick={() => setCountry(title!)}
     >
       <div className="group-hover/bento:translate-x-1 transition duration-200">
         <div className="rounded-sm overflow-hidden ">
@@ -52,7 +57,8 @@ export const BentoGridItem = ({
         </div>
         <div className="font-sans font-normal flex flex-col gap-y-1 text-neutral-600 text-xs dark:text-neutral-300">
           <p>
-            <span className="font-bold ">Population</span>: {population.toLocaleString()}
+            <span className="font-bold ">Population</span>:{" "}
+            {population.toLocaleString()}
           </p>
           <p>
             <span className="font-bold ">Region</span>: {region}
