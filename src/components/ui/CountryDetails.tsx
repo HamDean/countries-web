@@ -42,7 +42,7 @@ const CountryDetails = ({ country }: { country: Country }) => {
       </div>
 
       <div className="mt-20 flex gap-3">
-        <h2 className="font-semibold">Border countries: </h2>
+        <h2 className="font-semibold text-nowrap">Border countries: </h2>
         <Tags borders={country.borders} />
       </div>
     </>
