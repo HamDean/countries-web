@@ -1,8 +1,0 @@
-[-] - adjust the floating nav on mobile
-[] - fix the issue with the color mode switch
-[] - linke filtering and search results
-[-] - do something about the search button
-[-] - fix text wrapping on the border countries
-[-] - fix undefined map on some elements
-[-] - adjust flag width on mobile
-[-] - fix the color and weight of country detail title
