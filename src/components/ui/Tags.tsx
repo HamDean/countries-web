@@ -15,7 +15,7 @@ const Tags = ({ borders }: Props) => {
   return (
     <div className="flex flex-wrap">
       {borders && borders.map((border) => (
-        <Badge variant={"outline"} className="text-gray-600 px-4 mr-1 mb-1">
+        <Badge variant={"outline"} className="text-gray-600 text-nowrap px-4 mr-1 mb-1">
           {fetchBorder(border)}
         </Badge>
       ))}

@@ -24,7 +24,7 @@ const CountryDetailsPage = () => {
         </Link>
       </div>
       <div className="flex flex-col md:flex-row justify-between gap-2 w-[80vw] mx-auto">
-        <div className="w-[50%] md:w-[450px]">
+        <div className="w-[85%]  md:w-[450px] md:mr-4">
           <img src={country.flag!} alt="" />
         </div>
 
